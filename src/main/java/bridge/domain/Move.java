@@ -4,6 +4,7 @@ import static bridge.constant.ExceptionConstant.BRIDGE_MOVE_FORM;
 
 import bridge.constant.BridgeConstant;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Move {
@@ -18,10 +19,15 @@ public class Move {
         return new Move();
     }
 
-    public void addPositionByInput(String userInput) {
+    public List<String> addPositionByInput(String userInput) {
         if (!BridgeConstant.isCheckInBridgeConstant(userInput)) {
             throw new IllegalArgumentException(BRIDGE_MOVE_FORM.getMessage());
         }
         position.add(userInput);
+        return position;
+    }
+
+    public List<String> getPosition() {
+        return Collections.unmodifiableList(position);
     }
 }

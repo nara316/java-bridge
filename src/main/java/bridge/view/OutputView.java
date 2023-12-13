@@ -5,6 +5,13 @@ package bridge.view;
  */
 public class OutputView {
 
+    private static final String DIVISION_STANDARD = " | ";
+    private static final String PRINT_MOVE_CONDITION = "[ %s ]\n"
+            + "[ %s ]";
+    private static final String PRINT_MOVE_RESULT = "[ %s ]\n"
+            + "[ %s ]";
+    private static final String PRINT_GAME_RESULT = "게임 성공 여부: %s";
+    private static final String PRINT_GAME_PROCEED_QUANTITY = "총 시도한 횟수: %d";
 
     /**
      * 현재까지 이동한 다리의 상태를 정해진 형식에 맞춰 출력한다.

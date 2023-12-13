@@ -1,5 +1,6 @@
 package bridge.domain;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Bridge {
@@ -14,5 +15,9 @@ public class Bridge {
 
     public static Bridge of(int size, List<String> bridgeRoad) {
         return new Bridge(size, bridgeRoad);
+    }
+
+    public List<String> getBridgeRoad() {
+        return Collections.unmodifiableList(bridgeRoad);
     }
 }

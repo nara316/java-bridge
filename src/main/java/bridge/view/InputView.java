@@ -1,7 +1,9 @@
 package bridge.view;
 
+import static bridge.constant.ExceptionConstant.BRIDGE_INPUT_FORM;
 import static bridge.constant.ExceptionConstant.INPUT_IS_ESSENTIAL;
 
+import bridge.converter.StringConverter;
 import camp.nextstep.edu.missionutils.Console;
 
 /**
@@ -21,8 +23,9 @@ public class InputView {
     /**
      * 다리의 길이를 입력받는다.
      */
-    public String readBridgeSize() {
-        return printMessageAndGetInput(REQUEST_BRIDGE_SIZE);
+    public int readBridgeSize() {
+        String userInput = printMessageAndGetInput(REQUEST_BRIDGE_SIZE);
+        return StringConverter.strToInt(userInput, BRIDGE_INPUT_FORM.getMessage());
     }
 
     /**

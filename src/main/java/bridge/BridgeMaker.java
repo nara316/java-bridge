@@ -4,8 +4,6 @@ import static bridge.constant.BridgeConstant.BRIDGE_DOWN;
 import static bridge.constant.BridgeConstant.BRIDGE_UP;
 import static bridge.constant.NumberConstant.BRIDGE_POSITION_UP;
 
-import bridge.constant.BridgeConstant;
-import bridge.constant.NumberConstant;
 import java.util.ArrayList;
 import java.util.List;
 

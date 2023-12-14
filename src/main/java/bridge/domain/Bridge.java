@@ -2,6 +2,7 @@ package bridge.domain;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Bridge {
 
@@ -15,6 +16,11 @@ public class Bridge {
 
     public static Bridge of(int size, List<String> bridgeRoad) {
         return new Bridge(size, bridgeRoad);
+    }
+
+    public boolean isAllEqual(List<String> currentMove) {
+        return IntStream.range(0, currentMove.size())
+                .allMatch(index -> bridgeRoad.get(index).equals(currentMove.get(index)));
     }
 
     public List<String> getBridgeRoad() {

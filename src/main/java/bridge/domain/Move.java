@@ -19,12 +19,11 @@ public class Move {
         return new Move();
     }
 
-    public List<String> addPositionByInput(String userInput) {
+    public void addPositionByInput(String userInput) {
         if (!BridgeConstant.isCheckInBridgeConstant(userInput)) {
             throw new IllegalArgumentException(BRIDGE_MOVE_FORM.getMessage());
         }
         position.add(userInput);
-        return position;
     }
 
     public List<String> getPosition() {

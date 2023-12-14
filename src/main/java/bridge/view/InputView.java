@@ -1,8 +1,10 @@
 package bridge.view;
 
 import static bridge.constant.ExceptionConstant.BRIDGE_INPUT_FORM;
+import static bridge.constant.ExceptionConstant.GAME_CONDITION_FORM;
 import static bridge.constant.ExceptionConstant.INPUT_IS_ESSENTIAL;
 
+import bridge.constant.GameConditionConstant;
 import bridge.converter.StringConverter;
 import camp.nextstep.edu.missionutils.Console;
 
@@ -39,7 +41,11 @@ public class InputView {
      * 사용자가 게임을 다시 시도할지 종료할지 여부를 입력받는다.
      */
     public String readGameCommand() {
-        return printMessageAndGetInput(REQUEST_GAME_RESTART);
+        String userInput = printMessageAndGetInput(REQUEST_GAME_RESTART);
+        if (!GameConditionConstant.isCheckInGameConditionConstant(userInput)) {
+            throw new IllegalArgumentException(GAME_CONDITION_FORM.getMessage());
+        }
+        return userInput;
     }
 
     private String printMessageAndGetInput(String message) {
